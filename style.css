@@ -1,9 +1,1 @@
 /* style.css */
-
-:root {
-    --bs-primary: #4f46e5; /* Indigo 600 */
-    --bs-primary-rgb: 79, 70, 229;
-}
-.navbar-nav .nav-link:hover {
-    color: var(--bs-primary) !important;
-}
