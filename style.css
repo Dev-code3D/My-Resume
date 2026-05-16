@@ -1,1 +1,29 @@
 /* style.css */
+
+/* Couleur primaire Bootstrap */
+:root {
+  --bs-primary: #4f46e5;
+  --bs-primary-rgb: 79, 70, 229;
+}
+
+/* 2. Effet de survol */
+.card, .list-group-item {
+  transition: background-color 0.2s ease;
+}
+
+.card:hover, .list-group-item:hover {
+  background-color: #e7f1ff;
+}
+
+/* MOBILE */
+@media (max-width: 40rem) {
+  .card {
+    background-color: #f3f8fa;
+  }
+  .card-body, .list-group-item {
+    color: #3f4142;
+  }
+  .card:hover, .list-group-item:hover {
+  background-color: #ffffe7;
+  }
+}
