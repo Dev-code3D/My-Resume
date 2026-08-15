@@ -8,5 +8,57 @@ $(document).ready(function () {
 // Fonction updateAge
 function updateAge() {
     let val = $("#valeurAge").val();
-    $("#valeurAge").text(val-2026);
+    let annee = 2026;
+    let aniv = 2007;
+    let diff = annee - aniv;
+    console.log(diff);
+    $("#valeurAge").text(diff);
 }
+
+// Fonction charge liste des fichiers CV
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cvList = document.getElementById("cvList");
+
+  if (!cvList) return;
+
+  fetch("cv_folder/files.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Impossible de charger la liste des CV.");
+      }
+      return response.json();
+    })
+    .then((files) => {
+      if (!Array.isArray(files) || files.length === 0) {
+        cvList.innerHTML = `
+          <div class="alert alert-warning mb-0">
+            No CV available for the moment.
+          </div>
+        `;
+        return;
+      }
+
+      cvList.innerHTML = files.map(file => `
+        <a
+          href="cv_folder/${file.url}"
+          class="btn btn-outline-primary text-start d-flex justify-content-between align-items-center"
+          target="_blank"
+          download
+        >
+          <span>
+            <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+            ${file.name}
+          </span>
+          <span class="badge bg-primary rounded-pill">Open</span>
+        </a>
+      `).join("");
+    })
+    .catch(() => {
+      cvList.innerHTML = `
+        <div class="alert alert-danger mb-0">
+          Unable to load the CV list.
+        </div>
+      `;
+    });
+});

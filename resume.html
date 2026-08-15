@@ -56,11 +56,13 @@
           class="rounded-circle img-fluid shadow mb-3"
           style="max-width: 230px;">
       </a>
-      <p class="text-muted">
-        <i class="bi bi-calendar-fill me-2"></i>
-        <div id="valeurAge">19</div>
+      <p class="text-muted d-flex align-items-center justify-content-center gap-2 mb-0 mx-auto">
+        <i class="bi bi-calendar-fill"></i>
+        <span id="valeurAge">19°</span>years
       </p>
-      <a href="cv_folder" class="btn btn-secondary mt-3">Download Resume</a>
+      <button type="button" class="btn btn-secondary mt-3" data-bs-toggle="modal" data-bs-target="#cvModal">
+        Download Resume
+      </button>
     </div>
 
     <div class="col-md-8">
@@ -710,5 +712,20 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cvModalLabel">Download my CV</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="cvList" class="d-grid gap-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

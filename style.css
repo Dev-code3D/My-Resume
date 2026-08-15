@@ -31,3 +31,25 @@
   background-color: #ffffe7;
   }
 }
+
+/* CV List Styles */
+
+#cvList .btn {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+#cvList .btn:hover {
+  background-color: #3b3c3e;
+  transform: translateY(-1px);
+  transition: 0.2s ease;
+}
+
+#cvModal .modal-content {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+}
