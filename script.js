@@ -39,19 +39,32 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      cvList.innerHTML = files.map(file => `
-        <a
-          href="cv_folder/${file.url}"
-          class="btn btn-outline-primary text-start d-flex justify-content-between align-items-center"
-          target="_blank"
-          download
-        >
-          <span>
-            <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+      cvList.innerHTML = files.map((file) => `
+        <div class="cv-item">
+          <div class="cv-file-name">
+            <i class="bi bi-file-earmark-pdf text-danger me-2"></i>
             ${file.name}
-          </span>
-          <span class="badge bg-primary rounded-pill">Open</span>
-        </a>
+          </div>
+          <div class="cv-actions">
+            <a
+              href="cv_folder/${file.url}"
+              class="btn btn-outline-primary btn-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open in browser"
+            >
+              <i class="bi bi-box-arrow-up-right me-1"></i>Open
+            </a>
+            <a
+              href="cv_folder/${file.url}"
+              class="btn btn-secondary btn-sm"
+              download
+              title="Download PDF"
+            >
+              <i class="bi bi-download"></i>
+            </a>
+          </div>
+        </div>
       `).join("");
     })
     .catch(() => {
