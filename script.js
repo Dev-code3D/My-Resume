@@ -8,7 +8,7 @@ $(document).ready(function () {
 // Fonction updateAge
 function updateAge() {
     let val = $("#valeurAge").val();
-    let annee = 2026;
+    let annee = new Date().getFullYear(); // Recupère l'année actuelle dynamiquement (2026)
     let aniv = 2007;
     let diff = annee - aniv;
     console.log(diff);
