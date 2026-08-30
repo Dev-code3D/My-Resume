@@ -105,3 +105,9 @@
     justify-content: flex-end;
   }
 }
+
+/* text orcid deco Green */
+
+.text-orcid {
+  color: #A6CE39;
+}
