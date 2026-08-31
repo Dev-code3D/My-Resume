@@ -111,3 +111,19 @@
 .text-orcid {
   color: #A6CE39;
 }
+
+/* Certification badge logos */
+
+.badge-logo {
+  width: clamp(32px, 8vw, 48px);
+  height: clamp(32px, 8vw, 48px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 40rem) {
+  .badge-logo {
+    width: 32px;
+    height: 32px;
+  }
+}
